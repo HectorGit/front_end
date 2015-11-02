@@ -1,0 +1,45 @@
+<div class = "jumbotron text-center">
+ <h1>Home Page</h1>
+
+ <p>{{ home.message }}</p>
+ 
+  
+	<h1>Search:</h1>
+	
+	<form class="form-inline" ng-submit="home.changeText()">
+
+	<input type="text" class="form-control" placeholder= "Write your search Parameters" ng-model="home.inputData.textone">
+
+	<button type="submit" class="btn btn-lg btn-primary">SEND YOUR DATA</button> <!--ng-click = "home.addBook()">SEND YOUR DATA</button>-->
+
+	</form>
+	
+	 <table class="table table-border">
+		<th>
+			<tr>
+				<td>Book Name</td>
+				<td>Cost</td>
+				<td>Subject</td>
+				<td>Author</td>
+				<td>Reserve</td>
+			</tr>
+		</th>
+		<tbody>
+		<tr ng-repeat = "book in home.books">
+		
+			<td>{{book.bookname}}</td>
+			<td>{{book.cost}}</td>
+			<td>{{book.subject}}</td>
+			<td>{{book.author}}</td>
+			<td><button type="submit" class="btn btn-lg btn-primary" ng-click = "home.reserveBook()">RESERVE</button></td>
+
+		</tr>
+		</tbody>
+	 
+	 </table>
+	
+	
+	
+  
+
+</div>
